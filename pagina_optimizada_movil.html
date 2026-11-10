@@ -1,0 +1,2954 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <title>for you ❤️</title>
+
+
+
+  <!-- Google Fonts & Tailwind CSS -->
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cormorant+Garamond:wght@600;700&family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+
+  <!-- FontAwesome Icons -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+
+  <!-- Canvas Confetti Library -->
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+
+
+  <script>
+
+    tailwind.config = {
+
+      theme: {
+
+        extend: {
+
+          colors: {
+
+            romantic: {
+
+              50: '#fff5f7',
+
+              100: '#ffe3eb',
+
+              200: '#ffccd8',
+
+              300: '#ff9ebb',
+
+              400: '#ff6293',
+
+              500: '#ff2d6c',
+
+              600: '#e6004c',
+
+              700: '#bd003c',
+
+              cream: '#fffdfa',
+
+              gold: '#ffd700',
+
+              goldDark: '#d4af37'
+
+            }
+
+          },
+
+          fontFamily: {
+
+            poppins: ['Poppins', 'sans-serif'],
+
+            handwriting: ['Dancing Script', 'cursive'],
+
+            caveat: ['Caveat', 'cursive']
+
+          }
+
+        }
+
+      }
+
+    }
+
+  </script>
+
+
+
+  <style>
+
+    /* Estilos Personalizados y Animaciones CSS */
+
+    body {
+
+      font-family: 'Poppins', sans-serif;
+
+      background: linear-gradient(135deg, #fff0f3 0%, #ffe3eb 50%, #ffd6e0 100%);
+
+      min-height: 100vh;
+
+      min-height: 100dvh;
+
+      overflow-x: hidden;
+
+      user-select: none;
+
+      -webkit-tap-highlight-color: transparent;
+
+      -webkit-text-size-adjust: 100%;
+
+    }
+
+
+
+    /* Animación Fade In */
+
+    .animate-fade-in {
+
+      animation: fadeIn 1.2s ease-out forwards;
+
+    }
+
+
+
+    @keyframes fadeIn {
+
+      from { opacity: 0; transform: translateY(20px); }
+
+      to { opacity: 1; transform: translateY(0); }
+
+    }
+
+
+
+    /* Pulso suave para el botón principal */
+
+    .animate-pulse-glow {
+
+      animation: pulseGlow 2s infinite;
+
+    }
+
+
+
+    @keyframes pulseGlow {
+
+      0%, 100% {
+
+        box-shadow: 0 0 15px rgba(255, 45, 108, 0.5), 0 0 30px rgba(255, 45, 108, 0.2);
+
+        transform: scale(1);
+
+      }
+
+      50% {
+
+        box-shadow: 0 0 25px rgba(255, 45, 108, 0.8), 0 0 45px rgba(255, 45, 108, 0.4);
+
+        transform: scale(1.04);
+
+      }
+
+    }
+
+
+
+    /* Cajas Flotantes */
+
+    .floating-box {
+
+      animation: float 4s ease-in-out infinite;
+
+    }
+
+    .floating-box-delayed-1 {
+
+      animation: float 4.5s ease-in-out infinite 0.5s;
+
+    }
+
+    .floating-box-delayed-2 {
+
+      animation: float 3.8s ease-in-out infinite 1s;
+
+    }
+
+
+
+    @keyframes float {
+
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+
+      50% { transform: translateY(-12px) rotate(1.5deg); }
+
+    }
+
+
+
+    /* Tarjetas estilo Polaroid */
+
+    .polaroid {
+
+      background: white;
+
+      padding: 12px 12px 20px 12px;
+
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    }
+
+    .polaroid:hover {
+
+      transform: translateY(-8px) scale(1.02) rotate(0deg) !important;
+
+      box-shadow: 0 20px 35px rgba(255, 45, 108, 0.25);
+
+      z-index: 10;
+
+    }
+
+
+
+    /* Efectos Modal */
+
+    .modal-backdrop {
+
+      background: rgba(20, 5, 15, 0.65);
+
+      backdrop-filter: blur(8px);
+
+    }
+
+
+
+    /* Scrollbar Bonita */
+
+    ::-webkit-scrollbar {
+
+      width: 8px;
+
+    }
+
+    ::-webkit-scrollbar-track {
+
+      background: #ffe3eb;
+
+    }
+
+    ::-webkit-scrollbar-thumb {
+
+      background: #ff6293;
+
+      border-radius: 10px;
+
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+
+      background: #ff2d6c;
+
+    }
+
+
+
+    /* Animación Abrir Matrioshka */
+
+    .box-open {
+
+      animation: boxOpen 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+
+    }
+
+
+
+    @keyframes boxOpen {
+
+      0% { transform: scale(1) rotate(0); opacity: 1; }
+
+      50% { transform: scale(1.15) rotate(5deg); opacity: 0.8; }
+
+      100% { transform: scale(0) rotate(-15deg); opacity: 0; }
+
+    }
+
+
+
+    /* Burbujas de las 100 razones */
+
+    .reason-bubble {
+
+      transition: all 0.3s ease;
+
+      cursor: pointer;
+
+    }
+
+    .reason-bubble:hover {
+
+      transform: scale(1.25);
+
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+
+      z-index: 20;
+
+    }
+
+
+
+    /* Carta estilo papel antiguo */
+
+    .love-letter {
+
+      background: #fdfbf7;
+
+      background-image: radial-gradient(#e2d7c5 0.75px, transparent 0.75px);
+
+      background-size: 12px 12px;
+
+      border: 1px solid #ebdcc4;
+
+      box-shadow: inset 0 0 30px rgba(189, 140, 80, 0.15), 0 10px 30px rgba(0,0,0,0.15);
+
+    }
+
+
+
+    /* Cursor parpadeante mientras se escribe la carta */
+
+    .typing-cursor::after {
+
+      content: '|';
+
+      margin-left: 2px;
+
+      color: #ff2d6c;
+
+      animation: blinkCursor 0.8s steps(1) infinite;
+
+    }
+
+    @keyframes blinkCursor {
+
+      50% { opacity: 0; }
+
+    }
+
+
+
+    /* Botón NO travieso: se mueve por toda la pantalla (funciona en celular) */
+
+    .no-btn-flying {
+
+      position: fixed;
+
+      z-index: 70;
+
+      touch-action: manipulation;
+
+      transition: left 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), top 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.35s ease, background-color 0.3s ease;
+
+      max-width: 85vw;
+
+      white-space: nowrap;
+
+    }
+
+
+
+    /* ===== REPRODUCTOR DE MÚSICA (estilo tarjeta oscura) ===== */
+
+    .player-card {
+
+      width: 160px;
+
+      padding: 8px;
+
+      border-radius: 16px;
+
+      color: #fff;
+
+      background: rgba(18, 8, 16, 0.86);
+
+      backdrop-filter: blur(14px);
+
+      border: 1px solid rgba(255, 98, 147, 0.28);
+
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.45), 0 0 25px rgba(255, 45, 108, 0.2);
+
+    }
+
+    .player-cover {
+
+      position: relative;
+
+      width: 100%;
+
+      aspect-ratio: 1 / 1;
+
+      border-radius: 12px;
+
+      overflow: hidden;
+
+      background: linear-gradient(135deg, #3a1228, #12060f);
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      font-size: 28px;
+
+    }
+
+    .player-cover img {
+
+      position: absolute;
+
+      inset: 0;
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: cover;
+
+    }
+
+    .player-title {
+
+      font-family: 'Cormorant Garamond', serif;
+
+      font-weight: 700;
+
+      font-size: 13px;
+
+      line-height: 1.2;
+
+      text-align: center;
+
+      white-space: nowrap;
+
+      overflow: hidden;
+
+      text-overflow: ellipsis;
+
+    }
+
+    .player-artist {
+
+      font-family: 'Cormorant Garamond', serif;
+
+      font-size: 9px;
+
+      letter-spacing: 0.1em;
+
+      text-transform: uppercase;
+
+      color: rgba(255, 255, 255, 0.5);
+
+      text-align: center;
+
+      white-space: nowrap;
+
+      overflow: hidden;
+
+      text-overflow: ellipsis;
+
+    }
+
+    .pl-range {
+
+      -webkit-appearance: none;
+
+      appearance: none;
+
+      width: 100%;
+
+      height: 14px;
+
+      background: transparent;
+
+      cursor: pointer;
+
+      --p: 0%;
+
+    }
+
+    .pl-range::-webkit-slider-runnable-track {
+
+      height: 3px;
+
+      border-radius: 3px;
+
+      background: linear-gradient(to right, #ff9ebb var(--p), rgba(255, 255, 255, 0.25) var(--p));
+
+    }
+
+    .pl-range::-webkit-slider-thumb {
+
+      -webkit-appearance: none;
+
+      width: 9px;
+
+      height: 9px;
+
+      border-radius: 50%;
+
+      background: #fff;
+
+      margin-top: -3px;
+
+    }
+
+    .pl-range::-moz-range-track {
+
+      height: 3px;
+
+      border-radius: 3px;
+
+      background: rgba(255, 255, 255, 0.25);
+
+    }
+
+    .pl-range::-moz-range-progress {
+
+      height: 3px;
+
+      border-radius: 3px;
+
+      background: #ff9ebb;
+
+    }
+
+    .pl-range::-moz-range-thumb {
+
+      width: 9px;
+
+      height: 9px;
+
+      border: none;
+
+      border-radius: 50%;
+
+      background: #fff;
+
+    }
+
+    .pl-btn {
+
+      color: #fff;
+
+      width: 32px;
+
+      height: 32px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      transition: transform 0.2s ease, color 0.2s ease;
+
+    }
+
+    .pl-btn:hover { color: #ff9ebb; transform: scale(1.15); }
+
+    .pl-play {
+
+      width: 40px;
+
+      height: 40px;
+
+      border-radius: 50%;
+
+      border: 2px solid rgba(255, 98, 147, 0.55);
+
+      background: rgba(255, 45, 108, 0.18);
+
+      box-shadow: 0 0 14px rgba(255, 45, 108, 0.4);
+
+    }
+
+
+
+    /* ===== OPTIMIZACIÓN PARA CELULAR ===== */
+    button { touch-action: manipulation; }
+
+    #musicControl {
+      top: calc(env(safe-area-inset-top, 0px) + 8px);
+      right: calc(env(safe-area-inset-right, 0px) + 8px);
+    }
+    #mainContent { min-height: 100vh; min-height: 100dvh; }
+    #modal1 > div, #modal2 > div, #modal3 > div {
+      max-height: calc(100vh - 2rem);
+      max-height: calc(100dvh - 2rem - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px));
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
+    }
+    .modal-backdrop {
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      padding-top: max(0.5rem, env(safe-area-inset-top, 0px));
+      padding-bottom: max(0.5rem, env(safe-area-inset-bottom, 0px));
+    }
+
+    @media (max-width: 640px) {
+      .player-card { width: 140px; padding: 7px; }
+      .player-title { font-size: 12px; }
+      .pl-btn { width: 30px; height: 30px; }
+      .pl-play { width: 36px; height: 36px; }
+      #playerMini { width: 40px; height: 40px; }
+      #mainContent { padding-top: 4.5rem; padding-bottom: 3rem; }
+      .modal-backdrop { backdrop-filter: blur(4px); }
+      #reasonsGrid {
+        max-height: min(34dvh, 260px);
+        grid-template-columns: repeat(auto-fit, minmax(44px, 1fr));
+        gap: 6px;
+        padding: 6px;
+      }
+      #reasonsGrid .reason-bubble {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
+        justify-self: center;
+        font-size: 0.75rem;
+      }
+      #modal1 > div, #modal2 > div, #modal3 > div {
+        max-height: calc(100dvh - 1rem - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px));
+        border-radius: 1.25rem;
+      }
+      #modal2 > div { overflow-y: auto; }
+      #letterHeading { font-size: 2rem; }
+      #letterBody { font-size: 1.35rem; }
+      .no-btn-flying { font-size: 0.85rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+
+</head>
+
+<body class="relative flex flex-col justify-between text-gray-800">
+
+
+
+  <!-- Background Canvas para Partículas / Destellos -->
+
+  <canvas id="bgCanvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
+
+
+
+  <!-- Canvas para la explosión de gerberas (al tocar "comenzar") -->
+
+  <canvas id="flowerCanvas" class="fixed inset-0 pointer-events-none" style="z-index: 65;"></canvas>
+
+
+
+  <!-- REPRODUCTOR DE MÚSICA FLOTANTE (estilo tarjeta) -->
+
+  <div id="musicControl" class="hidden fixed top-4 right-4 z-50">
+
+
+
+    <!-- Botón pequeño cuando el reproductor está minimizado -->
+
+    <button id="playerMini" onclick="togglePlayerSize()" class="hidden w-12 h-12 rounded-full bg-romantic-500 text-white flex items-center justify-center shadow-lg hover:bg-romantic-600 transition">
+
+      <i id="miniIcon" class="fas fa-music"></i>
+
+    </button>
+
+
+
+    <!-- Tarjeta del reproductor -->
+
+    <div id="playerCard" class="player-card">
+
+      <div class="flex justify-end -mt-1 mb-1">
+
+        <button onclick="togglePlayerSize()" class="text-white/50 hover:text-white text-xs w-6 h-6 flex items-center justify-center" aria-label="Minimizar">
+
+          <i class="fas fa-chevron-up"></i>
+
+        </button>
+
+      </div>
+
+
+
+      <div class="player-cover">
+
+        <span>🎵</span>
+
+        <img id="trackCover" alt="Portada" src="">
+
+      </div>
+
+
+
+      <div class="mt-3">
+
+        <div id="trackTitle" class="player-title">Canción</div>
+
+        <div id="trackArtist" class="player-artist">Artista</div>
+
+      </div>
+
+
+
+      <div class="mt-2">
+
+        <input id="seekBar" type="range" min="0" max="1000" step="1" value="0" class="pl-range" aria-label="Progreso">
+
+        <div class="flex justify-between text-[10px] text-white/45 -mt-0.5">
+
+          <span id="timeCurrent">0:00</span>
+
+          <span id="timeTotal">0:00</span>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="flex items-center justify-center gap-4 mt-1">
+
+        <button onclick="prevTrack()" class="pl-btn" aria-label="Anterior"><i class="fas fa-backward-step"></i></button>
+
+        <button id="musicToggleBtn" onclick="toggleMusic()" class="pl-btn pl-play" aria-label="Reproducir o pausar">
+
+          <i id="musicIcon" class="fas fa-play"></i>
+
+        </button>
+
+        <button onclick="nextTrack()" class="pl-btn" aria-label="Siguiente"><i class="fas fa-forward-step"></i></button>
+
+      </div>
+
+
+
+      <div class="flex items-center gap-2 mt-2">
+
+        <i class="fas fa-volume-low text-white/50 text-xs"></i>
+
+        <input id="volumeSlider" type="range" min="0" max="1" step="0.05" value="0.5" oninput="changeVolume(this.value)" class="pl-range" aria-label="Volumen">
+
+      </div>
+
+      <span id="musicStatus" class="hidden">Pausado</span>
+
+    </div>
+
+
+
+    <!-- Audio HTML5 (la canción se carga desde la lista "playlist" en el script) -->
+
+    <audio id="bgAudio" preload="auto"></audio>
+
+  </div>
+
+
+
+  <!-- 1. PANTALLA DE ENTRADA / BIENVENIDA -->
+
+  <section id="welcomeScreen" class="fixed inset-0 z-40 flex flex-col items-center justify-center p-6 text-center bg-gradient-to-b from-romantic-50 via-romantic-100 to-romantic-200 transition-opacity duration-1000">
+
+    <div class="max-w-md w-full animate-fade-in flex flex-col items-center">
+
+      <div class="w-24 h-24 mb-6 rounded-full bg-white shadow-xl flex items-center justify-center text-4xl text-romantic-500 animate-bounce">
+
+        ✨❤️✨
+
+      </div>
+
+      <h1 class="font-handwriting text-5xl sm:text-6xl font-bold text-romantic-600 mb-4 tracking-wide leading-tight">
+
+        ¡Hola mi corazon❤️
+
+      </h1>
+
+      <p class="text-gray-600 text-base sm:text-lg mb-8 font-light px-4">
+
+        Te he echo esta pagina con mucho amor ¿Lista para descubrir lo que hay dentro?
+
+      </p>
+
+      <button onclick="startExperience()" class="animate-pulse-glow px-8 py-4 bg-gradient-to-r from-romantic-400 to-romantic-600 text-white font-semibold text-lg rounded-full shadow-lg hover:from-romantic-500 hover:to-romantic-700 transition duration-300 flex items-center gap-3">
+
+        <span>Toca aquí para comenzar</span>
+
+        <i class="fas fa-sparkles text-romantic-gold"></i>
+
+      </button>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- CONTENIDO PRINCIPAL (MENÚ DE REGALOS) -->
+
+  <main id="mainContent" class="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 py-16 hidden">
+
+
+
+    <!-- Encabezado Menú -->
+
+    <header class="text-center mb-12 max-w-xl animate-fade-in">
+
+      <span class="inline-block px-4 py-1 bg-white/70 backdrop-blur-sm text-romantic-600 rounded-full text-sm font-medium mb-3 border border-romantic-200 shadow-sm">
+
+        Para la persona más especial
+
+      </span>
+
+      <h2 class="font-handwriting text-4xl sm:text-5xl font-bold text-romantic-700 mb-2">
+
+        Mis 3 Regalos Para Ti
+
+      </h2>
+
+      <p class="text-gray-600 text-sm sm:text-base">
+
+        Haz clic en cada caja para descubrir los detalles que guardo para ti.
+
+      </p>
+
+    </header>
+
+
+
+    <!-- Menú con 3 Cajas de Regalo -->
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 max-w-5xl w-full px-4">
+
+
+
+      <!-- REGALO 1 -->
+
+      <div onclick="openGiftModal(1)" class="floating-box bg-white/80 backdrop-blur-md rounded-3xl p-6 shadow-xl border-2 border-romantic-200 hover:border-romantic-400 cursor-pointer transform hover:-translate-y-2 transition duration-300 flex flex-col items-center text-center group">
+
+        <div class="w-28 h-28 mb-4 bg-gradient-to-tr from-romantic-100 to-romantic-200 rounded-2xl flex items-center justify-center text-5xl group-hover:scale-110 transition duration-300 shadow-inner relative overflow-hidden">
+
+          <span class="z-10">📸</span>
+
+          <div class="absolute inset-0 bg-white/30 opacity-0 group-hover:opacity-100 transition duration-300"></div>
+
+        </div>
+
+        <h3 class="font-poppins font-semibold text-xl text-gray-800 mb-1 group-hover:text-romantic-600 transition">Regalo 1</h3>
+
+        <p class="font-handwriting text-2xl text-romantic-500 font-bold mb-2">Galería de Recuerdos</p>
+
+        <span class="text-xs text-gray-500 bg-romantic-50 px-3 py-1 rounded-full border border-romantic-100">momentos inolvidables</span>
+
+      </div>
+
+
+
+      <!-- REGALO 2 -->
+
+      <div onclick="openGiftModal(2)" class="floating-box-delayed-1 bg-white/80 backdrop-blur-md rounded-3xl p-6 shadow-xl border-2 border-romantic-200 hover:border-romantic-400 cursor-pointer transform hover:-translate-y-2 transition duration-300 flex flex-col items-center text-center group">
+
+        <div class="w-28 h-28 mb-4 bg-gradient-to-tr from-romantic-100 to-romantic-200 rounded-2xl flex items-center justify-center text-5xl group-hover:scale-110 transition duration-300 shadow-inner relative overflow-hidden">
+
+          <span class="z-10">💓</span>
+
+          <div class="absolute inset-0 bg-white/30 opacity-0 group-hover:opacity-100 transition duration-300"></div>
+
+        </div>
+
+        <h3 class="font-poppins font-semibold text-xl text-gray-800 mb-1 group-hover:text-romantic-600 transition">Regalo 2</h3>
+
+        <p class="font-handwriting text-2xl text-romantic-500 font-bold mb-2">100 razones</p>
+
+        <span class="text-xs text-gray-500 bg-romantic-50 px-3 py-1 rounded-full border border-romantic-100">Un universo de motivos </span>
+
+      </div>
+
+
+
+      <!-- REGALO 3 -->
+
+      <div onclick="openGiftModal(3)" class="floating-box-delayed-2 bg-white/80 backdrop-blur-md rounded-3xl p-6 shadow-xl border-2 border-romantic-200 hover:border-romantic-400 cursor-pointer transform hover:-translate-y-2 transition duration-300 flex flex-col items-center text-center group">
+
+        <div class="w-28 h-28 mb-4 bg-gradient-to-tr from-romantic-100 to-romantic-200 rounded-2xl flex items-center justify-center text-5xl group-hover:scale-110 transition duration-300 shadow-inner relative overflow-hidden">
+
+          <span class="z-10">🎁</span>
+
+          <div class="absolute inset-0 bg-white/30 opacity-0 group-hover:opacity-100 transition duration-300"></div>
+
+        </div>
+
+        <h3 class="font-poppins font-semibold text-xl text-gray-800 mb-1 group-hover:text-romantic-600 transition">Regalo 3</h3>
+
+        <p class="font-handwriting text-2xl text-romantic-500 font-bold mb-2">Una Gran Sorpresa</p>
+
+        <span class="text-xs text-gray-500 bg-romantic-50 px-3 py-1 rounded-full border border-romantic-100">Caja misteriosa</span>
+
+      </div>
+
+
+
+    </div>
+
+
+
+    <!-- Footer delicado -->
+
+    <footer class="mt-16 text-center text-xs text-gray-500 font-light">
+
+      Hecho con todo el corazón ❤️ | Para ti
+
+    </footer>
+
+  </main>
+
+
+
+  <!-- ==================== MODALES REGALOS ==================== -->
+
+
+
+  <!-- MODAL REGALO 1: GALERÍA DE RECUERDOS -->
+
+  <div id="modal1" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden opacity-0 transition-opacity duration-300">
+
+    <div class="bg-white/95 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 shadow-2xl border border-romantic-200 relative">
+
+      <button onclick="closeGiftModal(1)" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-gray-100 text-gray-600 hover:bg-romantic-100 hover:text-romantic-600 flex items-center justify-center transition">
+
+        <i class="fas fa-times text-lg"></i>
+
+      </button>
+
+
+
+      <div class="text-center mb-8">
+
+        <span class="text-3xl">📸</span>
+
+        <h3 class="font-handwriting text-4xl text-romantic-600 font-bold">Nuestros Momentos Especiales</h3>
+
+        <p class="text-xs sm:text-sm text-gray-500 mt-1">Cada foto guarda un recuerdo imborrable contigo</p>
+
+      </div>
+
+
+
+      <!-- Galería Polaroid Grid -->
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+
+
+        <!-- Polaroid 1 -->
+
+        <div class="polaroid transform -rotate-2 hover:rotate-0">
+
+          <div class="w-full h-48 bg-gray-100 overflow-hidden rounded mb-3">
+
+            <img src="day1.jpg" alt="Recuerdo 1" class="w-full h-full object-cover">
+
+          </div>
+
+          <p class="font-caveat text-xl text-center text-romantic-700 font-semibold leading-tight">
+
+            "Esta fue nuestra primera foto. tu y yo agarrados de la mano para siempre"
+
+          </p>
+
+        </div>
+
+
+
+        <!-- Polaroid 2 -->
+
+        <div class="polaroid transform rotate-2 hover:rotate-0">
+
+          <div class="w-full h-48 bg-gray-100 overflow-hidden rounded mb-3">
+
+            <img src="day6.jpg" alt="Recuerdo 2" class="w-full h-full object-cover">
+
+          </div>
+
+          <p class="font-caveat text-xl text-center text-romantic-700 font-semibold leading-tight">
+
+            "Contigo ya gane mi mejor victoria magistral."
+
+          </p>
+
+        </div>
+
+
+
+        <!-- Polaroid 3 -->
+
+        <div class="polaroid transform -rotate-1 hover:rotate-0">
+
+          <div class="w-full h-48 bg-gray-100 overflow-hidden rounded mb-3">
+
+            <img src="day3.jpg" alt="Recuerdo 3" class="w-full h-full object-cover">
+
+          </div>
+
+          <p class="font-caveat text-xl text-center text-romantic-700 font-semibold leading-tight">
+
+            "Nuestras ojos juntos se ven mejor que cualquier estrella o paisaje."
+
+          </p>
+
+        </div>
+
+
+
+        <!-- Polaroid 4 -->
+
+        <div class="polaroid transform rotate-3 hover:rotate-0">
+
+          <div class="w-full h-48 bg-gray-100 overflow-hidden rounded mb-3">
+
+            <img src="day4.jpg" alt="Recuerdo 4" class="w-full h-full object-cover">
+
+          </div>
+
+          <p class="font-caveat text-xl text-center text-romantic-700 font-semibold leading-tight">
+
+            "Nuestras caras mojadas pero siempre juntas. ese dia nos casamos."
+
+          </p>
+
+        </div>
+
+
+
+        <!-- Polaroid 5 -->
+
+        <div class="polaroid transform -rotate-3 hover:rotate-0">
+
+          <div class="w-full h-48 bg-gray-100 overflow-hidden rounded mb-3">
+
+            <img src="day7.jpg" alt="Recuerdo 5" class="w-full h-full object-cover">
+
+          </div>
+
+          <p class="font-caveat text-xl text-center text-romantic-700 font-semibold leading-tight">
+
+            "Simplemente nosotroa juntos. No puedo pedrile algo mas a la vida."
+
+          </p>
+
+        </div>
+
+
+
+        <!-- Polaroid 6 -->
+
+        <div class="polaroid transform rotate-1 hover:rotate-0">
+
+          <div class="w-full h-48 bg-gray-100 overflow-hidden rounded mb-3">
+
+            <img src="day11.jpg" alt="Recuerdo 6" class="w-full h-full object-cover">
+
+          </div>
+
+          <p class="font-caveat text-xl text-center text-romantic-700 font-semibold leading-tight">
+
+            "Somos demasiado guapos y pros  juntos."
+
+          </p>
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- MODAL REGALO 2: CORAZÓN Y 100 RAZONES -->
+
+  <div id="modal2" class="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 modal-backdrop hidden opacity-0 transition-opacity duration-300">
+
+    <div class="bg-white/95 rounded-3xl max-w-4xl w-full max-h-[92vh] overflow-y-auto flex flex-col p-4 sm:p-6 shadow-2xl border border-romantic-200 relative">
+
+      <button onclick="closeGiftModal(2)" class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-gray-100 text-gray-600 hover:bg-romantic-100 hover:text-romantic-600 flex items-center justify-center transition">
+
+        <i class="fas fa-times text-lg"></i>
+
+      </button>
+
+
+
+      <!-- Título modal -->
+
+      <div class="text-center mb-2">
+
+        <h3 class="font-handwriting text-3xl sm:text-4xl text-romantic-600 font-bold">100 Razones Por Las Que Me Gustas</h3>
+
+        <p class="text-xs text-gray-500">Toca o pasa sobre cualquier destello para leer una razón ❤️</p>
+
+      </div>
+
+
+
+      <!-- Área central: Canvas del Corazón + Contenedor de las 100 razones -->
+
+      <div class="relative flex-1 min-h-[300px] flex flex-col items-center justify-center overflow-hidden my-2 rounded-2xl bg-gradient-to-b from-romantic-50 to-white border border-romantic-100 p-2">
+
+
+
+        <!-- Canvas Corazón Latiendo -->
+
+        <canvas id="heartCanvas" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
+
+
+
+        <!-- Cuadro desplegable para mostrar la razón seleccionada -->
+
+        <div id="reasonDisplay" class="z-10 max-w-md w-full bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-romantic-300 text-center transform transition duration-300 mb-2">
+
+          <span id="reasonNumber" class="text-xs font-bold text-romantic-400 uppercase tracking-widest block mb-1">Razón N° 1</span>
+
+          <p id="reasonText" class="font-caveat text-2xl text-romantic-700 font-bold">
+
+            "Tu sonrisa tiene el poder mágico de alegrarme el día entero."
+
+          </p>
+
+        </div>
+
+
+
+        <!-- Grid/Mosaico de 100 Burbujas / Destellos -->
+
+        <div id="reasonsGrid" class="z-10 w-full max-h-[220px] overflow-y-auto grid grid-cols-5 sm:grid-cols-10 gap-2 p-2 scrollbar-thin">
+
+          <!-- Se llenarán dinámicamente con JS -->
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- MODAL REGALO 3: MATRIOSHKA & PROPUESTA -->
+
+  <div id="modal3" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden opacity-0 transition-opacity duration-300">
+
+    <div class="bg-white/95 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-10 shadow-2xl border border-romantic-200 relative flex flex-col items-center justify-center text-center">
+
+      <button onclick="closeGiftModal(3)" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-gray-100 text-gray-600 hover:bg-romantic-100 hover:text-romantic-600 flex items-center justify-center transition">
+
+        <i class="fas fa-times text-lg"></i>
+
+      </button>
+
+
+
+      <!-- SECUENCIA MATRIOSHKA -->
+
+      <div id="matrioshkaContainer" class="w-full flex flex-col items-center py-6">
+
+
+
+        <h3 id="matrioshkaTitle" class="font-handwriting text-3xl sm:text-4xl text-romantic-600 font-bold mb-2">
+
+          Hay una sorpresa esperando adentro...
+
+        </h3>
+
+        <p id="matrioshkaSubtitle" class="text-xs sm:text-sm text-gray-500 mb-8">
+
+          Toca la caja para abrirla
+
+        </p>
+
+
+
+        <!-- CAJA 1 (GRANDE) -->
+
+        <div id="box1" onclick="openMatrioshkaBox(1)" class="w-48 h-48 bg-gradient-to-tr from-romantic-400 to-romantic-600 rounded-3xl shadow-2xl flex items-center justify-center cursor-pointer transform hover:scale-105 transition duration-300 border-4 border-romantic-200 relative group">
+
+          <div class="absolute -top-4 w-16 h-8 bg-romantic-gold rounded-full shadow-md flex items-center justify-center text-xs font-bold text-gray-800">un regalo</div>
+
+          <span class="text-7xl group-hover:animate-bounce">🎁</span>
+
+        </div>
+
+
+
+        <!-- CAJA 2 (MEDIANA) - Oculta al inicio -->
+
+        <div id="box2" onclick="openMatrioshkaBox(2)" class="w-36 h-36 bg-gradient-to-tr from-romantic-300 to-romantic-500 rounded-2xl shadow-xl flex items-center justify-center cursor-pointer transform hover:scale-105 transition duration-300 border-4 border-romantic-100 relative hidden group">
+
+          <span class="text-5xl group-hover:animate-bounce">📦</span>
+
+        </div>
+
+
+
+        <!-- CAJA 3 (PEQUEÑA) - Oculta al inicio -->
+
+        <div id="box3" onclick="openMatrioshkaBox(3)" class="w-24 h-24 bg-gradient-to-tr from-romantic-goldDark to-romantic-gold rounded-xl shadow-lg flex items-center justify-center cursor-pointer transform hover:scale-105 transition duration-300 border-2 border-white relative hidden group">
+
+          <span class="text-3xl group-hover:animate-bounce">💎</span>
+
+        </div>
+
+
+
+      </div>
+
+
+
+      <!-- PANTALLA DE PROPUESTA FINAL (Desbloqueada tras abrir Caja 3) -->
+
+      <div id="proposalContainer" class="w-full flex flex-col items-center hidden animate-fade-in py-4">
+
+
+
+        <!-- Tarjeta de la Pregunta -->
+
+        <div id="proposalCard" class="bg-gradient-to-br from-romantic-50 to-white border-2 border-romantic-300 rounded-3xl p-6 sm:p-8 shadow-2xl max-w-md w-full relative overflow-hidden">
+
+          <div class="absolute -top-10 -right-10 w-24 h-24 bg-romantic-200 rounded-full blur-xl opacity-50"></div>
+
+
+
+          <div class="text-5xl mb-3 animate-pulse">💍</div>
+
+          <h3 class="font-handwriting text-4xl sm:text-5xl text-romantic-600 font-bold mb-4">
+
+            ¿Puedo ser tu novio?
+
+          </h3>
+
+          <p class="text-gray-600 text-sm mb-6">
+
+            Prometo cuidar tu corazón y hacer lo de nosotros tan unico y especial. ❤️
+
+          </p>
+
+
+
+          <!-- Botones de respuesta -->
+
+          <div class="relative min-h-[100px] flex items-center justify-center gap-4 flex-wrap">
+
+
+
+            <!-- Botón SÍ -->
+
+            <button onclick="acceptProposal()" class="px-6 py-3 bg-gradient-to-r from-romantic-500 to-romantic-700 text-white font-bold text-base rounded-full shadow-lg hover:scale-110 transition duration-300 flex items-center gap-2">
+
+              <span>¡Sí, me encantaría! </span>
+
+            </button>
+
+
+
+            <!-- Botón NO (Escurridizo / Travieso) -->
+
+            <button id="noBtn" onmouseover="moveNoBtn()" onclick="moveNoBtn()" class="px-6 py-3 bg-gray-200 text-gray-700 font-medium text-sm rounded-full shadow hover:bg-gray-300 transition duration-200">
+
+              No
+
+            </button>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- EL DETALLE EXTRA: Diminuto regalito para abrir carta manuscrita (aparece solo tras decir que SÍ) -->
+
+        <div id="secretGift" class="mt-8 flex flex-col items-center hidden">
+
+          <button onclick="toggleLoveLetter()" class="flex items-center gap-2 px-4 py-2 bg-romantic-100 hover:bg-romantic-200 text-romantic-700 rounded-full text-xs font-semibold shadow-sm transition border border-romantic-300 animate-bounce">
+
+            <span>🎁 Regalito secreto</span>
+
+            <span class="text-xs">Tócalo</span>
+
+          </button>
+
+
+
+          <!-- CARTA DE AMOR MANUSCRITA (se escribe poco a poco con JS) -->
+
+          <div id="loveLetterModal" class="hidden mt-4 max-w-md w-full love-letter p-6 rounded-2xl text-left border border-amber-200 shadow-xl transition-all duration-500">
+
+            <h4 id="letterHeading" class="font-handwriting text-3xl text-romantic-700 mb-3 border-b border-amber-200 pb-2" style="min-height: 2.8rem;"></h4>
+
+            <p id="letterBody" class="font-caveat text-2xl text-gray-800 leading-relaxed"></p>
+
+            <p id="letterSign" class="font-handwriting text-2xl text-right text-romantic-600 font-bold mt-4" style="opacity: 0; transition: opacity 1.2s ease;">
+
+              Con todo mi amor ❤️
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+
+
+  <!-- JS / SCRIPT -->
+
+  <script>
+
+    /* ===================================================
+
+       1. MÚSICA DE FONDO Y REPRODUCTOR (3 CANCIONES)
+
+    =================================================== */
+
+
+
+    /* ---------------------------------------------------
+
+       EDITA AQUÍ TUS CANCIONES:
+
+       - title: nombre de la canción
+
+       - artist: nombre del artista (puedes dejarlo vacío '')
+
+       - cover: foto de portada (archivo en la misma carpeta que este HTML)
+
+       - src: archivo de audio (también en la misma carpeta)
+
+    --------------------------------------------------- */
+
+    const playlist = [
+
+      {
+
+        title: 'Yoko',
+
+        artist: 'Álvaro Díaz',
+
+        cover: 'dayis2.jpg',
+
+        src: 'Alvaro Diaz - Yoko (Official Video) - YoAlvaroDiazVEVO (1).mp3'
+
+      },
+
+      {
+
+        title: 'Wonderwall ',
+
+        artist: ' Oasis ',
+
+        cover: 'dayis.jpg',
+
+        src: 'Oasis - Wonderwall (Official Video).mp3'
+
+      },
+
+      {
+
+        title: 'Te Quiero',
+
+        artist: 'Hombres G',
+
+        cover: 'dayis13.jpg',
+
+        src: 'Te quiero.mp3'
+
+      }
+
+    ];
+
+
+
+    const bgAudio = document.getElementById('bgAudio');
+
+    const musicIcon = document.getElementById('musicIcon');
+
+    const musicStatus = document.getElementById('musicStatus');
+
+    const miniIcon = document.getElementById('miniIcon');
+
+    const trackCover = document.getElementById('trackCover');
+
+    const trackTitle = document.getElementById('trackTitle');
+
+    const trackArtist = document.getElementById('trackArtist');
+
+    const seekBar = document.getElementById('seekBar');
+
+    const volumeSlider = document.getElementById('volumeSlider');
+
+    const timeCurrent = document.getElementById('timeCurrent');
+
+    const timeTotal = document.getElementById('timeTotal');
+
+    let isPlaying = false;
+
+    let currentTrack = 0;
+
+
+
+    function fmtTime(s) {
+
+      if (!isFinite(s) || s < 0) s = 0;
+
+      const m = Math.floor(s / 60);
+
+      const sec = Math.floor(s % 60);
+
+      return m + ':' + (sec < 10 ? '0' : '') + sec;
+
+    }
+
+
+
+    function setRangeFill(el) {
+
+      const min = parseFloat(el.min), max = parseFloat(el.max);
+
+      const pct = ((parseFloat(el.value) - min) / (max - min)) * 100;
+
+      el.style.setProperty('--p', pct + '%');
+
+    }
+
+
+
+    function updatePlayUI() {
+
+      const cls = isPlaying ? "fas fa-pause" : "fas fa-play";
+
+      musicIcon.className = cls;
+
+      miniIcon.className = isPlaying ? "fas fa-pause" : "fas fa-music";
+
+      musicStatus.textContent = isPlaying ? "Sonando ❤️" : "Pausado";
+
+    }
+
+
+
+    /* Carga la portada. Si el nombre no coincide exactamente (mayúsculas,
+
+       extensión distinta como .jpeg/.png, o doble extensión dayis.jpg.jpg),
+
+       prueba automáticamente otras variantes antes de rendirse. */
+
+    function setCover(name) {
+
+      trackCover.style.display = '';
+
+      if (!name) { trackCover.style.display = 'none'; return; }
+
+
+
+      const clean = String(name).trim();
+
+      const dot = clean.lastIndexOf('.');
+
+      const base = dot > 0 ? clean.slice(0, dot) : clean;
+
+      const exts = ['.jpg', '.jpeg', '.png', '.webp', '.JPG', '.JPEG', '.PNG', '.jfif'];
+
+      const bases = [base, base.toLowerCase(), base.charAt(0).toUpperCase() + base.slice(1).toLowerCase()];
+
+
+
+      const tries = [clean];
+
+      bases.forEach(b => exts.forEach(e => {
+
+        const c = b + e;
+
+        if (!tries.includes(c)) tries.push(c);
+
+      }));
+
+      tries.push(clean + '.jpg', clean + '.jpeg', clean + '.png');
+
+
+
+      let i = 0;
+
+      trackCover.onerror = () => {
+
+        i++;
+
+        if (i < tries.length) trackCover.src = encodeURI(tries[i]);
+
+        else trackCover.style.display = 'none';
+
+      };
+
+      trackCover.src = encodeURI(tries[0]);
+
+    }
+
+
+
+    function loadTrack(index, autoplay) {
+
+      currentTrack = (index + playlist.length) % playlist.length;
+
+      const t = playlist[currentTrack];
+
+
+
+      trackTitle.textContent = t.title;
+
+      trackArtist.textContent = t.artist || '';
+
+      trackArtist.style.display = t.artist ? '' : 'none';
+
+
+
+      // Portada (si no existe la imagen, se queda el fondo con 🎵)
+
+      setCover(t.cover);
+
+
+
+      bgAudio.src = t.src;
+
+      bgAudio.load();
+
+
+
+      seekBar.value = 0;
+
+      setRangeFill(seekBar);
+
+      timeCurrent.textContent = '0:00';
+
+      timeTotal.textContent = '0:00';
+
+
+
+      if (autoplay) {
+
+        bgAudio.play().then(() => {
+
+          isPlaying = true;
+
+          updatePlayUI();
+
+        }).catch(err => console.log("Audio block:", err));
+
+      }
+
+    }
+
+
+
+    function nextTrack() { loadTrack(currentTrack + 1, true); }
+
+    function prevTrack() { loadTrack(currentTrack - 1, true); }
+
+
+
+    function toggleMusic() {
+
+      if (isPlaying) {
+
+        bgAudio.pause();
+
+        isPlaying = false;
+
+        updatePlayUI();
+
+      } else {
+
+        bgAudio.play().then(() => {
+
+          isPlaying = true;
+
+          updatePlayUI();
+
+        }).catch(err => console.log("Audio block:", err));
+
+      }
+
+    }
+
+
+
+    function changeVolume(val) {
+
+      bgAudio.volume = val;
+
+      setRangeFill(volumeSlider);
+
+    }
+
+
+
+    function togglePlayerSize() {
+
+      document.getElementById('playerCard').classList.toggle('hidden');
+
+      document.getElementById('playerMini').classList.toggle('hidden');
+
+    }
+
+
+
+    // Eventos del audio
+
+    bgAudio.addEventListener('loadedmetadata', () => {
+
+      timeTotal.textContent = fmtTime(bgAudio.duration);
+
+    });
+
+    bgAudio.addEventListener('timeupdate', () => {
+
+      if (bgAudio.duration) {
+
+        seekBar.value = (bgAudio.currentTime / bgAudio.duration) * 1000;
+
+        setRangeFill(seekBar);
+
+        timeCurrent.textContent = fmtTime(bgAudio.currentTime);
+
+      }
+
+    });
+
+    bgAudio.addEventListener('ended', () => { nextTrack(); });
+
+    bgAudio.addEventListener('pause', () => { if (!bgAudio.ended) { isPlaying = false; updatePlayUI(); } });
+
+    bgAudio.addEventListener('play', () => { isPlaying = true; updatePlayUI(); });
+
+
+
+    // Mover la barra de progreso
+
+    seekBar.addEventListener('input', () => {
+
+      if (bgAudio.duration) {
+
+        bgAudio.currentTime = (seekBar.value / 1000) * bgAudio.duration;
+
+      }
+
+      setRangeFill(seekBar);
+
+    });
+
+
+
+    // Estado inicial del reproductor
+
+    bgAudio.volume = 0.5;
+
+    setRangeFill(volumeSlider);
+
+    loadTrack(0, false);
+
+
+
+    function startExperience() {
+
+      // El reproductor aparece solo después de tocar "comenzar"
+
+      document.getElementById('musicControl').classList.remove('hidden');
+
+
+
+      // Explosión de gerberas
+
+      explodeGerberas();
+
+
+
+      // Iniciar música
+
+      bgAudio.volume = 0.5;
+
+      bgAudio.play().then(() => {
+
+        isPlaying = true;
+
+        updatePlayUI();
+
+      }).catch(e => console.log("Autoplay atenuado por el navegador"));
+
+
+
+      // Transición de pantallas
+
+      const welcome = document.getElementById('welcomeScreen');
+
+      const main = document.getElementById('mainContent');
+
+
+
+      welcome.style.opacity = '0';
+
+      setTimeout(() => {
+
+        welcome.classList.add('hidden');
+
+        main.classList.remove('hidden');
+
+        main.classList.add('animate-fade-in');
+
+      }, 1000);
+
+    }
+
+
+
+    /* ===================================================
+
+       1.1 EXPLOSIÓN DE GERBERAS (al tocar "comenzar")
+
+    =================================================== */
+
+    function makeGerbera(colorTip, colorBase) {
+
+      const S = 140;
+
+      const c = document.createElement('canvas');
+
+      c.width = c.height = S;
+
+      const g = c.getContext('2d');
+
+      g.translate(S / 2, S / 2);
+
+
+
+      // Dos capas de pétalos largos (como una gerbera real)
+
+      [
+
+        { n: 16, len: 62, w: 8, off: 0 },
+
+        { n: 14, len: 48, w: 8, off: Math.PI / 14 }
+
+      ].forEach(L => {
+
+        for (let i = 0; i < L.n; i++) {
+
+          g.save();
+
+          g.rotate(i * 2 * Math.PI / L.n + L.off);
+
+          const gr = g.createLinearGradient(0, -8, 0, -L.len);
+
+          gr.addColorStop(0, colorBase);
+
+          gr.addColorStop(1, colorTip);
+
+          g.fillStyle = gr;
+
+          g.beginPath();
+
+          g.ellipse(0, -(L.len + 8) / 2, L.w, (L.len - 8) / 2 + 4, 0, 0, Math.PI * 2);
+
+          g.fill();
+
+          g.restore();
+
+        }
+
+      });
+
+
+
+      // Centro oscuro con puntitos amarillos
+
+      const cg = g.createRadialGradient(0, 0, 1, 0, 0, 13);
+
+      cg.addColorStop(0, '#5a2a1a');
+
+      cg.addColorStop(1, '#2e140c');
+
+      g.fillStyle = cg;
+
+      g.beginPath();
+
+      g.arc(0, 0, 13, 0, Math.PI * 2);
+
+      g.fill();
+
+
+
+      g.fillStyle = '#ffd23f';
+
+      for (let i = 0; i < 10; i++) {
+
+        const a = i * Math.PI / 5;
+
+        g.beginPath();
+
+        g.arc(Math.cos(a) * 16, Math.sin(a) * 16, 2, 0, Math.PI * 2);
+
+        g.fill();
+
+      }
+
+      return c;
+
+    }
+
+
+
+    function explodeGerberas() {
+
+      const cv = document.getElementById('flowerCanvas');
+
+      const fctx = cv.getContext('2d');
+
+      cv.width = window.innerWidth;
+
+      cv.height = window.innerHeight;
+
+
+
+      const sprites = [
+
+        ['#ff6a00', '#ffb347'],
+
+        ['#ff2d6c', '#ff9ebb'],
+
+        ['#ffc400', '#fff0a0'],
+
+        ['#e6004c', '#ff6293'],
+
+        ['#ff8a65', '#ffd1b3']
+
+      ].map(p => makeGerbera(p[0], p[1]));
+
+
+
+      const flowers = [];
+
+      let secondWave = false;
+
+      const small = window.innerWidth < 640;
+
+      const sizeK = small ? 0.8 : 1;
+
+      const vk = Math.min(1, Math.max(0.5, window.innerWidth / 900));
+
+
+
+      function burst(n) {
+
+        for (let i = 0; i < n; i++) {
+
+          const a = Math.random() * Math.PI * 2;
+
+          const sp = (5 + Math.random() * 13) * vk;
+
+          flowers.push({
+
+            x: cv.width / 2,
+
+            y: cv.height / 2,
+
+            vx: Math.cos(a) * sp,
+
+            vy: Math.sin(a) * sp - 3,
+
+            rot: Math.random() * Math.PI * 2,
+
+            vr: (Math.random() - 0.5) * 0.15,
+
+            s: 0.25 + Math.random() * 0.55,
+
+            img: sprites[Math.floor(Math.random() * sprites.length)],
+
+            life: 0,
+
+            max: 150 + Math.random() * 60
+
+          });
+
+        }
+
+      }
+
+
+
+      burst(small ? 28 : 45);
+
+      setTimeout(() => { burst(small ? 18 : 30); secondWave = true; }, 250);
+
+
+
+      function frame() {
+
+        fctx.clearRect(0, 0, cv.width, cv.height);
+
+        let alive = false;
+
+
+
+        flowers.forEach(f => {
+
+          if (f.life >= f.max) return;
+
+          alive = true;
+
+          f.life++;
+
+          f.vx *= 0.975;
+
+          f.vy = f.vy * 0.975 + 0.22;
+
+          f.x += f.vx;
+
+          f.y += f.vy;
+
+          f.rot += f.vr;
+
+
+
+          const grow = Math.min(1, f.life / 8);
+
+          const alpha = f.life > f.max - 40 ? (f.max - f.life) / 40 : 1;
+
+          const size = 140 * f.s * grow * sizeK;
+
+
+
+          fctx.save();
+
+          fctx.globalAlpha = Math.max(0, alpha);
+
+          fctx.translate(f.x, f.y);
+
+          fctx.rotate(f.rot);
+
+          fctx.drawImage(f.img, -size / 2, -size / 2, size, size);
+
+          fctx.restore();
+
+        });
+
+
+
+        if (alive || !secondWave) {
+
+          requestAnimationFrame(frame);
+
+        } else {
+
+          fctx.clearRect(0, 0, cv.width, cv.height);
+
+        }
+
+      }
+
+      frame();
+
+    }
+
+
+
+    /* ===================================================
+
+       2. CANVAS DE FONDO (PARTÍCULAS Y CORAZONES FLOTANTES)
+
+    =================================================== */
+
+    const bgCanvas = document.getElementById('bgCanvas');
+
+    const ctx = bgCanvas.getContext('2d');
+
+    let particles = [];
+
+
+
+    function resizeBgCanvas() {
+
+      bgCanvas.width = window.innerWidth;
+
+      bgCanvas.height = window.innerHeight;
+
+    }
+
+    window.addEventListener('resize', resizeBgCanvas);
+
+    resizeBgCanvas();
+
+
+
+    class Particle {
+
+      constructor() {
+
+        this.reset();
+
+      }
+
+      reset() {
+
+        this.x = Math.random() * bgCanvas.width;
+
+        this.y = bgCanvas.height + Math.random() * 50;
+
+        this.size = Math.random() * 12 + 6;
+
+        this.speedY = Math.random() * 1.2 + 0.5;
+
+        this.speedX = Math.sin(Math.random() * Math.PI) * 0.8;
+
+        this.opacity = Math.random() * 0.5 + 0.3;
+
+        this.color = ['#ffccd8', '#ff9ebb', '#ff6293', '#ffd700'][Math.floor(Math.random() * 4)];
+
+        this.isHeart = Math.random() > 0.4;
+
+      }
+
+      update() {
+
+        this.y -= this.speedY;
+
+        this.x += this.speedX;
+
+        if (this.y < -20) this.reset();
+
+      }
+
+      draw() {
+
+        ctx.save();
+
+        ctx.globalAlpha = this.opacity;
+
+        ctx.fillStyle = this.color;
+
+        if (this.isHeart) {
+
+          ctx.font = `${this.size}px serif`;
+
+          ctx.fillText('❤️', this.x, this.y);
+
+        } else {
+
+          ctx.beginPath();
+
+          ctx.arc(this.x, this.y, this.size / 2, 0, Math.PI * 2);
+
+          ctx.fill();
+
+        }
+
+        ctx.restore();
+
+      }
+
+    }
+
+
+
+    const isMobileScreen = window.innerWidth < 640;
+
+    for (let i = 0; i < (isMobileScreen ? 18 : 35); i++) {
+
+      particles.push(new Particle());
+
+    }
+
+
+
+    function animateBg() {
+
+      ctx.clearRect(0, 0, bgCanvas.width, bgCanvas.height);
+
+      particles.forEach(p => {
+
+        p.update();
+
+        p.draw();
+
+      });
+
+      requestAnimationFrame(animateBg);
+
+    }
+
+    animateBg();
+
+
+
+    /* ===================================================
+
+       3. GESTIÓN DE MODALES DE REGALOS
+
+    =================================================== */
+
+    function openGiftModal(num) {
+
+      const modal = document.getElementById(`modal${num}`);
+
+      modal.classList.remove('hidden');
+
+      setTimeout(() => {
+
+        modal.classList.remove('opacity-0');
+
+      }, 10);
+
+
+
+      if (num === 2) {
+
+        initHeartCanvas();
+
+      }
+
+
+
+      // Si el botón "No" ya está volando por la pantalla, lo mostramos de nuevo
+
+      if (num === 3) {
+
+        const nb = document.getElementById('noBtn');
+
+        if (nb && nb.classList.contains('no-btn-flying')) nb.style.display = '';
+
+      }
+
+    }
+
+
+
+    function closeGiftModal(num) {
+
+      const modal = document.getElementById(`modal${num}`);
+
+      modal.classList.add('opacity-0');
+
+      setTimeout(() => {
+
+        modal.classList.add('hidden');
+
+      }, 300);
+
+
+
+      // Ocultamos el botón "No" para que no se quede flotando fuera del modal
+
+      if (num === 3) {
+
+        const nb = document.getElementById('noBtn');
+
+        if (nb && nb.classList.contains('no-btn-flying')) nb.style.display = 'none';
+
+      }
+
+    }
+
+
+
+    /* ===================================================
+
+       4. REGALO 2: 100 RAZONES Y CORAZÓN CANVAS
+
+    =================================================== */
+
+    const reasons = [
+
+      "Tu sonrisa ilumina cualquier día gris.",
+
+      "La forma tan dulce en la que me miras.",
+
+      "Tu sentido del humor único.",
+
+      "Tu lunar que tienes en tu nariz .",
+
+      "Tus besitos .",
+
+      "Tus abrazos que me llenan de paz.",
+
+      "Lo inteligente y capaz que eres.",
+
+      "La pasión que pones en lo que te gusta.",
+
+      "Tus ocurrencias repentinas.",
+
+      "Porque hablamos mucho.",
+
+      "Lo bien que se siente tomar tu mano.",
+
+      "Poque me gusta hacerte cosquillas.",
+
+      "Porque a tu lado puedo ser yo mismo.",
+
+      "Porque eres la mas pro.",
+
+      "Tu risa contagiosa.",
+
+      "Tus detalles.",
+
+      "Lo bien que combinamos juntos.",
+
+      "Cada recuerdo que construimos.",
+
+      "Tu dulzura.",
+
+      "Poque nunca supimos lo que es ir lento.",
+
+      "Porque haces especial lo cotidiano.",
+
+      "Porque eres mi esposa.",
+
+      "Cómo defiendes lo que crees.",
+
+      "Tus gustos musicales.",
+
+      "La calma que transmites.",
+
+      "Tu ternura al hablar.",
+
+      "Lo hermosa que te ves siempre.",
+
+      "Porque me inspiras a ser mejor.",
+
+      "Tus gestos bonitos cuando hablas con entusiasmo.",
+
+      "La complicidad en nuestras miradas.",
+
+      "Tu estilo tan único.",
+
+      "Cómo me escuchas con atención.",
+
+      "Tus chistes que me hacen reír.",
+
+      "Por tu nariz bonita.",
+
+      "Lo exagerada que sueles ser.",
+
+      "Lo ceosa que sueles ser.",
+
+      "Porque haces que mi corazón lata más fuerte.",
+
+      "Porque eres mi lugar seguro..",
+
+      "El brillo de tus ojos.",
+
+      "La felicidad de tenerte en mi vida.",
+
+      "Tu manera de ver las cosas.",
+
+      "Tus caricias suaves.",
+
+      "Tu autenticidad.",
+
+      "Porque contigo el tiempo vuela.",
+
+      "El calor de tu cuerpo.",
+
+      "Tus expresiones al hablar.",
+
+      "Por tu cabello malo pero hermoso.",
+
+      " .",
+
+      "Lo simetricamente perfecta que eres.",
+
+      "Por tu piercing en tu ombligo.",
+
+      "Por lo necia que eres.",
+
+      "Por tus atributos que me ponen a rezar",
+
+      "Tienes un encanto justo debajo de tu cintura.",
+
+      "Cuando te enojas.",
+
+      "Tus besos lentos cargados de amor",
+
+      "La gran pintora que eres.",
+
+      "El olor de tu pelo .",
+
+      "Tus largas y bellas piernas. ",
+
+      "El comer contigo.",
+
+      "Porque contigo todo es más divertido.",
+
+      "Tus buenos dias al despertar",
+
+      "Tu cuello dulce",
+
+      "Tu cintura con una corvatura perfecta.",
+
+      "Tus besos al desperdirnos.",
+
+      "Porque me haces sonreír al celular.",
+
+      "Tus sueños e ilusiones.",
+
+      "Lo pro que sueles ser.",
+
+      "tu pequeño lunas que tienes abajo de tu cuello.",
+
+      "Tus gestos de cariño espontáneos.",
+
+      "Tu brillo propio.",
+
+      "Lo comprensiva que eres.",
+
+      "Tu energía bonita.",
+
+      "Tus cejas bien.",
+
+      "Tus gustos compartidos conmigo.",
+
+      "La paz que se siente a tu lado.",
+
+      "Tu manera tan pura de amar.",
+
+      "Tu inteligencia para resolver las cosas.",
+
+      "Tus pestañas y tus ojos bonitos.",
+
+      "Porque le das sentido a muchas cosas.",
+
+      "Lo kawai que eres uwu.",
+
+      "Tu piel suavecita como algodon .",
+
+      "Tu ternura al despedirte.",
+
+      "Porque eres mi persona favorita.",
+
+      "Tu estilo de caminar.",
+
+      "La calidez de tu piel.",
+
+      "Tus preguntas curiosas.",
+
+      "Porque llenas cada espacio de alegría.",
+
+      "Tu compañía inigualable.",
+
+      "Lo facil que te enojas .",
+
+      "Tu dulve voz.",
+
+      "Tu ternura infantil en el buen sentido.",
+
+      "Porque eres una persona maravillosa.",
+
+      "Tu aroma único.",
+
+      "Tu mirada comprensiva.",
+
+      "Por todas nuestras conversaciones.",
+
+      "Porque a tu lado no falta nada.",
+
+      "Tu forma de abrazarme.",
+
+      "Tu belleza tanto por dentro como por fuera.",
+
+      "Porque me haces infinitamente feliz.",
+
+      "Simplemente por ser exactamente tú. ❤️"
+
+    ];
+
+
+
+    // Poblar Mosaico de 100 Razones
+
+    const grid = document.getElementById('reasonsGrid');
+
+    grid.innerHTML = '';
+
+    reasons.forEach((r, idx) => {
+
+      const btn = document.createElement('button');
+
+      btn.className = "reason-bubble w-8 h-8 rounded-full bg-gradient-to-tr from-romantic-200 to-romantic-300 text-romantic-700 font-bold text-xs flex items-center justify-center border border-romantic-400 hover:bg-romantic-500 hover:text-white transition";
+
+      btn.innerText = idx + 1;
+
+      btn.onclick = () => selectReason(idx);
+      btn.addEventListener('pointerenter', (event) => {
+        if (event.pointerType === 'mouse' || event.pointerType === 'pen') selectReason(idx);
+      });
+      grid.appendChild(btn);
+
+    });
+
+
+
+    function selectReason(index) {
+
+      document.getElementById('reasonNumber').innerText = `Razón N° ${index + 1}`;
+
+      document.getElementById('reasonText').innerText = `"${reasons[index]}"`;
+
+    }
+
+
+
+    // Canvas Corazón Latiendo
+
+    let heartAnimId;
+
+    function initHeartCanvas() {
+
+      const canvas = document.getElementById('heartCanvas');
+
+      const hCtx = canvas.getContext('2d');
+
+      canvas.width = canvas.parentElement.clientWidth;
+
+      canvas.height = canvas.parentElement.clientHeight;
+
+
+
+      let scale = 1;
+      let growing = true;
+      const resizeHeartCanvas = () => {
+        const rect = canvas.parentElement.getBoundingClientRect();
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        canvas.width = Math.max(1, Math.round(rect.width * dpr));
+        canvas.height = Math.max(1, Math.round(rect.height * dpr));
+        canvas.style.width = rect.width + 'px';
+        canvas.style.height = rect.height + 'px';
+        hCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      };
+      resizeHeartCanvas();
+      if (window.ResizeObserver) {
+        const heartResizeObserver = new ResizeObserver(resizeHeartCanvas);
+        heartResizeObserver.observe(canvas.parentElement);
+      } else {
+        window.addEventListener('resize', resizeHeartCanvas, { passive: true });
+      }
+
+      function drawHeart() {
+        const rect = canvas.getBoundingClientRect();
+        hCtx.clearRect(0, 0, rect.width, rect.height);
+        const cx = rect.width / 2;
+        const cy = rect.height / 2 - 10;
+
+
+
+        // Pulso
+
+        if (growing) {
+
+          scale += 0.006;
+
+          if (scale > 1.15) growing = false;
+
+        } else {
+
+          scale -= 0.006;
+
+          if (scale < 0.92) growing = true;
+
+        }
+
+
+
+        hCtx.save();
+
+        hCtx.translate(cx, cy);
+
+        hCtx.scale(scale, scale);
+
+
+
+        // Resplandor
+
+        hCtx.shadowColor = '#ff2d6c';
+
+        hCtx.shadowBlur = 25;
+
+
+
+        // Dibujo de Corazón
+
+        hCtx.beginPath();
+
+        hCtx.fillStyle = '#ff2d6c';
+
+        const topCurveHeight = 35;
+
+        hCtx.moveTo(0, 15);
+
+        hCtx.bezierCurveTo(0, -topCurveHeight, -50, -topCurveHeight, -50, 15);
+
+        hCtx.bezierCurveTo(-50, 45, 0, 75, 0, 95);
+
+        hCtx.bezierCurveTo(0, 75, 50, 45, 50, 15);
+
+        hCtx.bezierCurveTo(50, -topCurveHeight, 0, -topCurveHeight, 0, 15);
+
+        hCtx.closePath();
+
+        hCtx.fill();
+
+
+
+        hCtx.restore();
+
+
+
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          heartAnimId = requestAnimationFrame(drawHeart);
+        }
+      }
+      if (heartAnimId) cancelAnimationFrame(heartAnimId);
+      drawHeart();
+
+    }
+
+
+
+    /* ===================================================
+
+       5. REGALO 3: MATRIOSHKA & PROPUESTA
+
+    =================================================== */
+
+    let currentStep = 1;
+
+
+
+    function openMatrioshkaBox(step) {
+
+      if (step === 1) {
+
+        const box1 = document.getElementById('box1');
+
+        box1.classList.add('box-open');
+
+        setTimeout(() => {
+
+          box1.classList.add('hidden');
+
+          const box2 = document.getElementById('box2');
+
+          box2.classList.remove('hidden');
+
+          box2.classList.add('animate-fade-in');
+
+          document.getElementById('matrioshkaTitle').innerText = "¡Hay otra caja dentro! 😮";
+
+        }, 500);
+
+      } else if (step === 2) {
+
+        const box2 = document.getElementById('box2');
+
+        box2.classList.add('box-open');
+
+        setTimeout(() => {
+
+          box2.classList.add('hidden');
+
+          const box3 = document.getElementById('box3');
+
+          box3.classList.remove('hidden');
+
+          box3.classList.add('animate-fade-in');
+
+          document.getElementById('matrioshkaTitle').innerText = "Una caja más pequeñita... ";
+
+        }, 500);
+
+      } else if (step === 3) {
+
+        const box3 = document.getElementById('box3');
+
+        box3.classList.add('box-open');
+
+        setTimeout(() => {
+
+          document.getElementById('matrioshkaContainer').classList.add('hidden');
+
+          document.getElementById('proposalContainer').classList.remove('hidden');
+
+        }, 500);
+
+      }
+
+    }
+
+
+
+    /* Botón "NO" Travieso: se mueve por toda la pantalla, cambia de mensaje y funciona en celular */
+
+    const noMessages = [
+
+      "No",
+
+      "¿Por qué sigues intentando? 🤨",
+
+      "No puedes, jajaja 😜",
+
+      "Mejor di que sí ",
+
+      "Es inútil, no me alcanzas ",
+
+      "Jajaja, ni lo intentes ",
+
+      "Ya te dije que no puedes 😝"
+
+    ];
+
+    let noCount = 0;
+
+    let noPlaceholder = null;
+
+
+
+    function moveNoBtn() {
+
+      const btn = document.getElementById('noBtn');
+
+      if (!btn) return;
+
+
+
+      // Primera vez: saca el botón de la tarjeta para que pueda volar por toda la pantalla
+
+      if (!btn.classList.contains('no-btn-flying')) {
+
+        const r = btn.getBoundingClientRect();
+
+        // Marcador para que la tarjeta no se deforme al quitar el botón
+
+        noPlaceholder = document.createElement('span');
+
+        noPlaceholder.style.display = 'inline-block';
+
+        noPlaceholder.style.width = r.width + 'px';
+
+        noPlaceholder.style.height = r.height + 'px';
+
+        btn.parentNode.insertBefore(noPlaceholder, btn);
+
+
+
+        btn.classList.add('no-btn-flying');
+
+        btn.style.left = r.left + 'px';
+
+        btn.style.top = r.top + 'px';
+
+        document.body.appendChild(btn);
+
+        void btn.offsetWidth; // fuerza el reflujo para que la transición funcione
+
+      }
+
+
+
+      // Cambia el mensaje
+
+      noCount++;
+
+      btn.textContent = noMessages[Math.min(noCount, noMessages.length - 1)];
+
+
+
+      // Calcula una nueva posición aleatoria dentro de la pantalla visible
+
+      const viewport = window.visualViewport;
+      const left = viewport ? viewport.offsetLeft : 0;
+      const top = viewport ? viewport.offsetTop : 0;
+      const vw = viewport ? viewport.width : window.innerWidth;
+      const vh = viewport ? viewport.height : window.innerHeight;
+      const w = btn.offsetWidth;
+      const h = btn.offsetHeight;
+      const margin = 12;
+      const minX = left + margin;
+      const minY = top + Math.min(60, vh * 0.12);
+      const maxX = Math.max(minX, left + vw - w - margin);
+      const maxY = Math.max(minY, top + vh - h - margin);
+      const x = minX + Math.random() * Math.max(0, maxX - minX);
+      const y = minY + Math.random() * Math.max(0, maxY - minY);
+
+
+
+      const rot = (Math.random() - 0.5) * 30;
+
+      btn.style.left = x + 'px';
+
+      btn.style.top = y + 'px';
+
+      btn.style.transform = `rotate(${rot}deg) scale(${1 + Math.random() * 0.15})`;
+
+    }
+
+
+
+    // En celular: al tocar el "No" se mueve antes de que alcance a hacer clic
+
+    (function () {
+
+      const btn = document.getElementById('noBtn');
+
+      btn.addEventListener('touchstart', function (e) {
+
+        e.preventDefault();
+
+        moveNoBtn();
+
+      }, { passive: false });
+
+    })();
+
+    /* Aceptar Propuesta (Confeti y Mensaje) */
+
+    function acceptProposal() {
+
+      // Disparo de Confeti Masivo
+
+      const duration = 4 * 1000;
+
+      const animationEnd = Date.now() + duration;
+
+
+
+      (function frame() {
+
+        confetti({
+
+          particleCount: 7,
+
+          angle: 60,
+
+          spread: 55,
+
+          origin: { x: 0 },
+
+          colors: ['#ff2d6c', '#ffd700', '#ffffff']
+
+        });
+
+        confetti({
+
+          particleCount: 7,
+
+          angle: 120,
+
+          spread: 55,
+
+          origin: { x: 1 },
+
+          colors: ['#ff2d6c', '#ffd700', '#ffffff']
+
+        });
+
+
+        if (Date.now() < animationEnd) {
+
+          requestAnimationFrame(frame);
+
+        }
+
+      })();
+
+      // Quitar el botón "No" (esté donde esté)
+
+      const noBtn = document.getElementById('noBtn');
+
+      if (noBtn) noBtn.remove();
+
+      if (noPlaceholder) noPlaceholder.remove();
+
+
+
+      // Cambiar solo la tarjeta de la pregunta (la carta queda intacta)
+
+      const card = document.getElementById('proposalCard');
+
+      card.innerHTML = `
+
+        <div class="text-center animate-fade-in">
+
+          <div class="text-6xl mb-4 animate-bounce">💖🎉✨</div>
+
+          <h3 class="font-handwriting text-5xl text-romantic-600 font-bold mb-3">
+
+            ¡Dijo que SÍ!
+
+          </h3>
+
+          <p class="text-gray-700 text-lg font-light mb-4">
+
+            Me acabas de hacer la persona más feliz del mundo entero.
+
+          </p>
+
+          <span class="inline-block px-4 py-2 bg-romantic-100 text-romantic-700 rounded-full font-semibold text-sm">
+
+            Prometo hacerte sonreír siempre ❤️
+
+          </span>
+
+        </div>
+
+      `;
+      // Aparece el nuevo regalito que abre la carta
+
+      const gift = document.getElementById('secretGift');
+      gift.classList.remove('hidden');
+      gift.classList.add('animate-fade-in');
+
+    }
+    /* ===================================================
+
+       6. CARTA DE AMOR: SE ESCRIBE POCO A POCO
+
+    =================================================== */
+
+    const letterHeadingText = "Para mi persona favorita...";
+
+    const letterBodyText = "Independientemente de lo que me digas, sé que existe la posibilidad de que me rechaces. Entiendo que puede haber razones y, aunque no sería lo que deseo, respetaría tu decisión. Pero hay algo que no quiero dejar de hacer: decirte lo que siento.Solo quiero decirte que, desde que llegaste a mi vida con un sticker de un perrito, te has convertido en algo más que una persona. Hoy puedo decir con certeza que eres mi persona favoritaDesde que estás conmigo, todo tiene un color distinto, uno más brillante. Has llegado a iluminar mi corazón, dándole ese rayito de sol que tanto buscaba, que quizá siempre había buscado sin saber.  Pienso en ti durante el día y, cuando no estoy a tu lado, solamente deseo estarlo. Porque bastan unos minutos contigo para que un día ordinario se convierta en uno extraordinario. Cuando estoy a tu lado, siento que puedo estar en paz con el mundo. A veces pienso que ya no tengo nada más que pedirle a Dios, porque mientras tus ojos me miren y me permitas seguir siendo parte de tu vida, tendré algo que durante mucho tiempo he deseado. Lo único que quiero es poder hacerte tan feliz como tú me haces a mí. Sé que no todos los días serán perfectos. También sé que no siempre habrá sonrisas, pero quiero que sepas que, incluso en los días difíciles, quiero estar a tu lado. Porque te amo. En los días grises quiero ser tu color y, en los días lluviosos, tu café. Quiero acompañarte cuando no sepas qué hacer, ser tu pañuelo cuando llores y escucharte cuando necesites desahogarte. No puedo prometerte que nunca habrá tristezas, pero sí puedo ofrecerte mi compañía incluso cuando aparezcan. Quiero construir algo que perdure. Quiero verte brillar todavía más de lo que ya brillas, verte volar, verte cumplir tus sueños, verte conducir un avión y, cuando regreses cansada a casa, estar ahí para recibirte. Quiero verte alcanzar cada una de tus metas, verte feliz y compartir la alegría de ver a tu familia feliz también. Me importas. Y por eso me preocupo por ti, porque sé que tienes tus propios problemas, tus preocupaciones y tus días complicados. Quiero que tengamos la confianza de contárnoslo todo, de escucharnos y de encontrar en el otro un lugar donde podamos ser nosotros mismos. Incluso me preocupan esas pequeñas cosas, como que no comas bien o que te duermas demasiado tarde. Quiero decirte que me vuelve loco tu forma de ser. No encuentro las palabras exactas para explicar lo que provocas en mí, pero tienes esa capacidad de hacerme brillar. Por un momento, consigues silenciar todo ese ruido que existe dentro de mí. Y no solamente eso: me inspiras a ser una mejor persona.También quiero confesarte algo: tengo miedo de perderte. Durante mucho tiempo he huido de este sentimiento, alejándome de cualquier posibilidad de construir una relación. Y ahora, contigo, me atreví a hacer algo que nunca antes había hecho. Me permití sentir, acercarme y dejar que alguien se volviera tan importante para mí. Quizá por eso también tengo miedo. Sé que a veces mis conductas pueden parecer extrañas, pero hay cosas de mí que todavía estoy aprendiendo a comprender. Por eso, antes que cualquier otra cosa, quiero darte las gracias. Gracias por cada risa, por cada mensaje, por cada instante y por esa paz. Esta página es apenas una pequeña muestra de todo lo que siento por ti y de lo que significas para mí.Quizá la vida no tenga un propósito escrito. Quizá sea solamente un camino lleno de incertidumbres, encuentros inesperados y despedidas que no podemos prever. Pero si hay algo que puedo elegir entre tanta incertidumbre, es quedarme contigo y escribir un libro juntos, uno que lleve por título Nuestra vida, y cuyas páginas podamos llenar desde ahora hasta el último de nuestros días.No pretendo ofrecerte una historia sin dificultades ni un futuro escrito con tinta indeleble. Prefiero ofrecerte algo mucho más sincero: mis ganas de conocerte cada día un poquito más, de aprender de ti y contigo, de compartir mis pensamientos, mis alegrías, mis tonterías y esos pequeños instantes que hacen que la vida tenga sentido.Corazón, no importa cuántas palabras escriba, probablemente ninguna será suficiente para describir lo maravilloso que es tenerte cerca..";
+
+    let letterState = 'idle'; // idle | typing | done
+
+
+
+    const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+
+
+    async function typeInto(el, text, speed) {
+      el.classList.add('typing-cursor');
+      const scrollBox = el.closest('#modal3 > div');
+      for (let i = 0; i < text.length; i++) {
+        const ch = text[i];
+        el.textContent += ch;
+        if (i % 18 === 0 && scrollBox) {
+          const textBottom = el.getBoundingClientRect().bottom;
+          const boxBottom = scrollBox.getBoundingClientRect().bottom;
+          if (textBottom > boxBottom - 36) {
+            scrollBox.scrollTop += textBottom - boxBottom + 48;
+          }
+        }
+        await sleep(speed + Math.random() * 25 + (',.;'.includes(ch) ? 220 : 0));
+      }
+      el.classList.remove('typing-cursor');
+    }
+
+    async function startLetter() {
+
+      letterState = 'typing';
+
+      const head = document.getElementById('letterHeading');
+
+      const body = document.getElementById('letterBody');
+
+      const sign = document.getElementById('letterSign');
+
+      head.textContent = '';
+
+      body.textContent = '';
+
+      sign.style.opacity = '0';
+
+      await typeInto(head, letterHeadingText, 55);
+
+      await sleep(300);
+
+      await typeInto(body, letterBodyText, 38);
+
+      await sleep(300);
+
+      sign.style.opacity = '1';
+
+      sign.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+      letterState = 'done';
+
+    }
+    /* Desplegar Carta de Amor Secreta */
+
+    function toggleLoveLetter() {
+
+      const letter = document.getElementById('loveLetterModal');
+
+      if (letter.classList.contains('hidden')) {
+
+        letter.classList.remove('hidden');
+
+        letter.classList.add('animate-fade-in');
+
+        if (letterState === 'idle') startLetter();
+
+      } else {
+
+        letter.classList.add('hidden');
+      }
+
+    }
+  </script>
+</body>
+</html>
